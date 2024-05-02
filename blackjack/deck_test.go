@@ -14,3 +14,15 @@ func TestNewDeck(t *testing.T) {
 	}
 
 }
+
+func TestDeckPopCard(t *testing.T) {
+	deck := blackjack.NewDeck()
+	deck.Shuffle()
+
+	deck.PopCard()
+
+	if len(deck.Cards()) != 51 {
+		t.Fail()
+	}
+
+}

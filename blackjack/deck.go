@@ -55,3 +55,12 @@ func (d *Deck) Shuffle() {
 
 	d.cards = ret
 }
+
+// Gets the top card and removes it from the deck
+func (d *Deck) PopCard() Card {
+	top_card := d.Cards()[len(d.Cards())-1]
+
+	d.cards = d.cards[:len(d.Cards())-1]
+
+	return top_card
+}
