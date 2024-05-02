@@ -41,3 +41,21 @@ func TestHandCountAce(t *testing.T) {
 	}
 
 }
+
+func TestHandCountBasicBlackjack(t *testing.T) {
+
+	hand := blackjack.NewHand()
+	hand.AddCard(blackjack.Card{
+		Face: blackjack.NewFaceDat(1, blackjack.ACE_DAT),
+		Suit: blackjack.SUIT_CLUBS,
+	})
+	hand.AddCard(blackjack.Card{
+		Face: blackjack.NewFaceDat(10, blackjack.NONE_DAT),
+		Suit: blackjack.SUIT_SPADE,
+	})
+
+	if hand.CountValue() != 21 {
+		t.Fail()
+	}
+
+}
