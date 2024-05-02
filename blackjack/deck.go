@@ -1,5 +1,10 @@
 package blackjack
 
+import (
+	"math/rand"
+	"time"
+)
+
 type Deck struct {
 	cards []Card
 }
@@ -36,4 +41,17 @@ func NewDeck() Deck {
 
 	return deck
 
+}
+
+func (d *Deck) Shuffle() {
+	r := rand.New(rand.NewSource(time.Now().Unix()))
+	ret := make([]Card, len(d.Cards()))
+	n := len(d.Cards())
+	for i := 0; i < n; i++ {
+		randIndex := r.Intn(len(d.Cards()))
+		ret[i] = d.Cards()[randIndex]
+		d.cards = append(d.Cards()[:randIndex], d.Cards()[randIndex+1:]...)
+	}
+
+	d.cards = ret
 }
