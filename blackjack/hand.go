@@ -23,8 +23,22 @@ func (h *Hand) AddCard(c Card) {
 func (h *Hand) CountValue() int {
 	count := 0
 
+	aces := 0
+
 	for _, card := range h.Cards() {
+		if card.Face.extraDat == ACE_DAT {
+			aces++
+			continue
+		}
 		count += card.Face.Value()
+	}
+
+	for i := 0; i < aces; i++ {
+		if count+11 > 21 {
+			count++
+			continue
+		}
+		count += 11
 	}
 
 	return count
