@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/aixoio/go-blackjack/game"
+)
 
 func main() {
-	fmt.Println("Hello, world!")
+	game.Start()
 }
