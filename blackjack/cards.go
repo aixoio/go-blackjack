@@ -7,12 +7,17 @@ type Card struct {
 
 type Suit = int
 
+const NUMBER_OF_SUITES int = 4
+const NUMBER_OF_CARDS_PER_SUITE int = 13
+
 const (
 	SUIT_HEART Suit = iota
 	SUIT_DIAMOND
 	SUIT_SPADE
 	SUIT_CLUBS
 )
+
+var SUITES = [4]Suit{SUIT_HEART, SUIT_DIAMOND, SUIT_SPADE, SUIT_CLUBS}
 
 type ExtraFaceDat = int
 
@@ -21,6 +26,7 @@ const (
 	JACK_DAT
 	QUEEN_DAT
 	KING_DAT
+	NONE_DAT
 )
 
 type FaceDat struct {
