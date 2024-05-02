@@ -14,16 +14,30 @@ const (
 	SUIT_CLUBS
 )
 
+type ExtraFaceDat = int
+
+const (
+	ACE_DAT ExtraFaceDat = iota
+	JACK_DAT
+	QUEEN_DAT
+	KING_DAT
+)
+
 type FaceDat struct {
-	value int
+	value    int
+	extraDat ExtraFaceDat
 }
 
-func NewFaceDat(value int) FaceDat {
-	return FaceDat{value: value}
+func NewFaceDat(value int, ex ExtraFaceDat) FaceDat {
+	return FaceDat{value: value, extraDat: ex}
 }
 
 func (f *FaceDat) Value() int {
 	return f.value
+}
+
+func (f *FaceDat) ExtraFaceDat() ExtraFaceDat {
+	return f.extraDat
 }
 
 func (c *Card) IsRed() bool {
