@@ -18,6 +18,10 @@ type FaceDat struct {
 	value int
 }
 
+func NewFaceDat(value int) FaceDat {
+	return FaceDat{value: value}
+}
+
 func (f *FaceDat) Value() int {
 	return f.value
 }
