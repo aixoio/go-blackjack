@@ -1,78 +1,92 @@
 package img
 
 import (
-	"fmt"
+	"bytes"
+	"image/png"
 
-	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
+	"github.com/hajimehoshi/ebiten/v2"
 )
 
-func loadDiamonds(cards_path string) error {
+func loadDiamonds() error {
 	var err error
 
-	DIAMONDS_ACE, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-ace.png", cards_path))
+	cardDecoded, err := png.Decode(bytes.NewBuffer(diamonds_png_ACE))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_ACE = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_JACK, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-jack.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_2))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_2 = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_KING, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-king.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_3))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_3 = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_QUEEN, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-queen.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_4))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_4 = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_2, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-2.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_5))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_5 = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_3, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-3.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_6))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_6 = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_4, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-4.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_7))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_7 = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_5, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-5.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_8))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_8 = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_6, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-6.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_9))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_9 = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_7, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-7.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_10))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_10 = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_8, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-8.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_JACK))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_JACK = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_9, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-9.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_KING))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_KING = ebiten.NewImageFromImage(cardDecoded)
 
-	DIAMONDS_10, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/diamonds-10.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(diamonds_png_QUEEN))
 	if err != nil {
 		return err
 	}
+	DIAMONDS_QUEEN = ebiten.NewImageFromImage(cardDecoded)
 
 	return err
 }

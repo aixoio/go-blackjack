@@ -1,35 +1,37 @@
 package img
 
 import (
-	"fmt"
+	"bytes"
+	"image/png"
 
-	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
+	"github.com/hajimehoshi/ebiten/v2"
 )
 
-func LoadImages(cards_path string) error {
+func LoadImages() error {
 	var err error
 
-	CARD, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/card.png", cards_path))
+	cardDecoded, err := png.Decode(bytes.NewBuffer(card_png))
+	if err != nil {
+		return err
+	}
+	CARD = ebiten.NewImageFromImage(cardDecoded)
+
+	err = loadSpades()
 	if err != nil {
 		return err
 	}
 
-	err = loadSpades(cards_path)
+	err = loadClubs()
 	if err != nil {
 		return err
 	}
 
-	err = loadClubs(cards_path)
+	err = loadDiamonds()
 	if err != nil {
 		return err
 	}
 
-	err = loadDiamonds(cards_path)
-	if err != nil {
-		return err
-	}
-
-	err = loadHearts(cards_path)
+	err = loadHearts()
 	if err != nil {
 		return err
 	}

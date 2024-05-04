@@ -1,78 +1,92 @@
 package img
 
 import (
-	"fmt"
+	"bytes"
+	"image/png"
 
-	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
+	"github.com/hajimehoshi/ebiten/v2"
 )
 
-func loadSpades(cards_path string) error {
+func loadSpades() error {
 	var err error
 
-	SPADES_ACE, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-ace.png", cards_path))
+	cardDecoded, err := png.Decode(bytes.NewBuffer(spades_png_ACE))
 	if err != nil {
 		return err
 	}
+	SPADES_ACE = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_JACK, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-jack.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_2))
 	if err != nil {
 		return err
 	}
+	SPADES_2 = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_KING, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-king.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_3))
 	if err != nil {
 		return err
 	}
+	SPADES_3 = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_QUEEN, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-queen.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_4))
 	if err != nil {
 		return err
 	}
+	SPADES_4 = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_2, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-2.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_5))
 	if err != nil {
 		return err
 	}
+	SPADES_5 = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_3, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-3.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_6))
 	if err != nil {
 		return err
 	}
+	SPADES_6 = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_4, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-4.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_7))
 	if err != nil {
 		return err
 	}
+	SPADES_7 = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_5, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-5.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_8))
 	if err != nil {
 		return err
 	}
+	SPADES_8 = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_6, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-6.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_9))
 	if err != nil {
 		return err
 	}
+	SPADES_9 = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_7, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-7.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_10))
 	if err != nil {
 		return err
 	}
+	SPADES_10 = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_8, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-8.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_JACK))
 	if err != nil {
 		return err
 	}
+	SPADES_JACK = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_9, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-9.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_KING))
 	if err != nil {
 		return err
 	}
+	SPADES_KING = ebiten.NewImageFromImage(cardDecoded)
 
-	SPADES_10, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/spades-10.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(spades_png_QUEEN))
 	if err != nil {
 		return err
 	}
+	SPADES_QUEEN = ebiten.NewImageFromImage(cardDecoded)
 
 	return err
 }

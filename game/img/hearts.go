@@ -1,78 +1,92 @@
 package img
 
 import (
-	"fmt"
+	"bytes"
+	"image/png"
 
-	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
+	"github.com/hajimehoshi/ebiten/v2"
 )
 
-func loadHearts(cards_path string) error {
+func loadHearts() error {
 	var err error
 
-	HEARTS_ACE, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-ace.png", cards_path))
+	cardDecoded, err := png.Decode(bytes.NewBuffer(hearts_png_ACE))
 	if err != nil {
 		return err
 	}
+	HEARTS_ACE = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_JACK, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-jack.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_2))
 	if err != nil {
 		return err
 	}
+	HEARTS_2 = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_KING, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-king.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_3))
 	if err != nil {
 		return err
 	}
+	HEARTS_3 = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_QUEEN, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-queen.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_4))
 	if err != nil {
 		return err
 	}
+	HEARTS_4 = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_2, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-2.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_5))
 	if err != nil {
 		return err
 	}
+	HEARTS_5 = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_3, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-3.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_6))
 	if err != nil {
 		return err
 	}
+	HEARTS_6 = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_4, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-4.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_7))
 	if err != nil {
 		return err
 	}
+	HEARTS_7 = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_5, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-5.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_8))
 	if err != nil {
 		return err
 	}
+	HEARTS_8 = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_6, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-6.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_9))
 	if err != nil {
 		return err
 	}
+	HEARTS_9 = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_7, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-7.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_10))
 	if err != nil {
 		return err
 	}
+	HEARTS_10 = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_8, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-8.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_JACK))
 	if err != nil {
 		return err
 	}
+	HEARTS_JACK = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_9, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-9.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_KING))
 	if err != nil {
 		return err
 	}
+	HEARTS_KING = ebiten.NewImageFromImage(cardDecoded)
 
-	HEARTS_10, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/hearts-10.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(hearts_png_QUEEN))
 	if err != nil {
 		return err
 	}
+	HEARTS_QUEEN = ebiten.NewImageFromImage(cardDecoded)
 
 	return err
 }

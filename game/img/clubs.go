@@ -1,78 +1,92 @@
 package img
 
 import (
-	"fmt"
+	"bytes"
+	"image/png"
 
-	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
+	"github.com/hajimehoshi/ebiten/v2"
 )
 
-func loadClubs(cards_path string) error {
+func loadClubs() error {
 	var err error
 
-	CLUBS_ACE, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-ace.png", cards_path))
+	cardDecoded, err := png.Decode(bytes.NewBuffer(clubs_png_ACE))
 	if err != nil {
 		return err
 	}
+	CLUBS_ACE = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_JACK, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-jack.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_2))
 	if err != nil {
 		return err
 	}
+	CLUBS_2 = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_KING, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-king.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_3))
 	if err != nil {
 		return err
 	}
+	CLUBS_3 = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_QUEEN, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-queen.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_4))
 	if err != nil {
 		return err
 	}
+	CLUBS_4 = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_2, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-2.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_5))
 	if err != nil {
 		return err
 	}
+	CLUBS_5 = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_3, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-3.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_6))
 	if err != nil {
 		return err
 	}
+	CLUBS_6 = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_4, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-4.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_7))
 	if err != nil {
 		return err
 	}
+	CLUBS_7 = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_5, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-5.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_8))
 	if err != nil {
 		return err
 	}
+	CLUBS_8 = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_6, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-6.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_9))
 	if err != nil {
 		return err
 	}
+	CLUBS_9 = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_7, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-7.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_10))
 	if err != nil {
 		return err
 	}
+	CLUBS_10 = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_8, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-8.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_JACK))
 	if err != nil {
 		return err
 	}
+	CLUBS_JACK = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_9, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-9.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_KING))
 	if err != nil {
 		return err
 	}
+	CLUBS_KING = ebiten.NewImageFromImage(cardDecoded)
 
-	CLUBS_10, _, err = ebitenutil.NewImageFromFile(fmt.Sprintf("%s/clubs-10.png", cards_path))
+	cardDecoded, err = png.Decode(bytes.NewBuffer(clubs_png_QUEEN))
 	if err != nil {
 		return err
 	}
+	CLUBS_QUEEN = ebiten.NewImageFromImage(cardDecoded)
 
 	return err
 }
