@@ -17,12 +17,16 @@ func DrawCard(screen *ebiten.Image, x, y int, card blackjack.Card) {
 		switch card.Face.ExtraFaceDat() {
 		case blackjack.ACE_DAT:
 			DrawImageAt(x, y, screen, img.CLUBS_ACE)
+			return
 		case blackjack.JACK_DAT:
 			DrawImageAt(x, y, screen, img.CLUBS_JACK)
+			return
 		case blackjack.KING_DAT:
 			DrawImageAt(x, y, screen, img.CLUBS_KING)
+			return
 		case blackjack.QUEEN_DAT:
 			DrawImageAt(x, y, screen, img.CLUBS_QUEEN)
+			return
 		}
 		switch card.Face.Value() {
 		case 2:
@@ -49,12 +53,16 @@ func DrawCard(screen *ebiten.Image, x, y int, card blackjack.Card) {
 		switch card.Face.ExtraFaceDat() {
 		case blackjack.ACE_DAT:
 			DrawImageAt(x, y, screen, img.SPADES_ACE)
+			return
 		case blackjack.JACK_DAT:
 			DrawImageAt(x, y, screen, img.SPADES_JACK)
+			return
 		case blackjack.KING_DAT:
 			DrawImageAt(x, y, screen, img.SPADES_KING)
+			return
 		case blackjack.QUEEN_DAT:
 			DrawImageAt(x, y, screen, img.SPADES_QUEEN)
+			return
 		}
 		switch card.Face.Value() {
 		case 2:
@@ -81,12 +89,16 @@ func DrawCard(screen *ebiten.Image, x, y int, card blackjack.Card) {
 		switch card.Face.ExtraFaceDat() {
 		case blackjack.ACE_DAT:
 			DrawImageAt(x, y, screen, img.DIAMONDS_ACE)
+			return
 		case blackjack.JACK_DAT:
 			DrawImageAt(x, y, screen, img.DIAMONDS_JACK)
+			return
 		case blackjack.KING_DAT:
 			DrawImageAt(x, y, screen, img.DIAMONDS_KING)
+			return
 		case blackjack.QUEEN_DAT:
 			DrawImageAt(x, y, screen, img.DIAMONDS_QUEEN)
+			return
 		}
 
 		switch card.Face.Value() {
@@ -115,12 +127,16 @@ func DrawCard(screen *ebiten.Image, x, y int, card blackjack.Card) {
 		switch card.Face.ExtraFaceDat() {
 		case blackjack.ACE_DAT:
 			DrawImageAt(x, y, screen, img.HEARTS_ACE)
+			return
 		case blackjack.JACK_DAT:
 			DrawImageAt(x, y, screen, img.HEARTS_JACK)
+			return
 		case blackjack.KING_DAT:
 			DrawImageAt(x, y, screen, img.HEARTS_KING)
+			return
 		case blackjack.QUEEN_DAT:
 			DrawImageAt(x, y, screen, img.HEARTS_QUEEN)
+			return
 		}
 
 		switch card.Face.Value() {
