@@ -14,6 +14,12 @@ func WaitingUpdate() {
 
 	if inpututil.IsMouseButtonJustReleased(ebiten.MouseButtonLeft) && MouseIsOverHitButton {
 		HitMe()
+		// TODO: switch state
+	}
+
+	if inpututil.IsMouseButtonJustReleased(ebiten.MouseButtonLeft) && MouseIsOverStandButton {
+		DealerPlay()
+		// TODO: switch state
 	}
 
 }

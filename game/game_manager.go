@@ -1,6 +1,8 @@
 package game
 
-import "github.com/aixoio/go-blackjack/blackjack"
+import (
+	"github.com/aixoio/go-blackjack/blackjack"
+)
 
 var Deck blackjack.Deck
 var DealerHand, PlayerHand blackjack.Hand
@@ -29,4 +31,11 @@ func HitMe() {
 	}
 	PlayerHand.AddCard(Deck.PopCard())
 	PlayerCount = PlayerHand.CountValue()
+}
+
+func DealerPlay() {
+	for DealerCount < PlayerCount && DealerCount < 20 {
+		DealerHand.AddCard(Deck.PopCard())
+		DealerCount = DealerHand.CountValue()
+	}
 }
