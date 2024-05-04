@@ -7,5 +7,5 @@ import (
 )
 
 func DrawHome(screen *ebiten.Image) {
-	DrawTextWithPoppinsRegularAt("Blackjack", color.White, 10, 10, screen, 48)
+	DrawTextWithPoppinsRegularAt("Blackjack", color.White, 200, 75, screen, 48)
 }
