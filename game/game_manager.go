@@ -4,6 +4,7 @@ import "github.com/aixoio/go-blackjack/blackjack"
 
 var Deck blackjack.Deck
 var DealerHand, PlayerHand blackjack.Hand
+var PlayerCount, DealerCount int
 
 func InitBlackjack() {
 	Deck = blackjack.NewDeck()
@@ -16,5 +17,8 @@ func InitBlackjack() {
 
 	PlayerHand.AddCard(Deck.PopCard())
 	PlayerHand.AddCard(Deck.PopCard())
+
+	DealerCount = DealerHand.CountValue()
+	PlayerCount = PlayerHand.CountValue()
 
 }
