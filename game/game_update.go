@@ -11,5 +11,9 @@ func (g *Game) Update() error {
 		WaitingUpdate()
 	}
 
+	if CURRENT_STATE == PLAYING {
+		UpdatePlaying()
+	}
+
 	return nil
 }

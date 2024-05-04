@@ -14,12 +14,14 @@ func WaitingUpdate() {
 
 	if inpututil.IsMouseButtonJustReleased(ebiten.MouseButtonLeft) && MouseIsOverHitButton {
 		HitMe()
-		// TODO: switch state
+		if PlayerCount >= 21 {
+			CURRENT_STATE = PLAYING
+		}
 	}
 
 	if inpututil.IsMouseButtonJustReleased(ebiten.MouseButtonLeft) && MouseIsOverStandButton {
 		DealerPlay()
-		// TODO: switch state
+		CURRENT_STATE = PLAYING
 	}
 
 }
