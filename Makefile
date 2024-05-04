@@ -7,6 +7,9 @@ DEBUGARGS=debug
 run:
 	$(GO) run . $(DEBUGARGS)
 
+run-prod:
+	$(GO) run .
+
 build:
 	$(GO) build
 
