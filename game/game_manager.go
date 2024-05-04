@@ -24,6 +24,9 @@ func InitBlackjack() {
 }
 
 func HitMe() {
+	if Deck.TotalCards()-1 < 0 {
+		InitBlackjack()
+	}
 	PlayerHand.AddCard(Deck.PopCard())
 	PlayerCount = PlayerHand.CountValue()
 }
