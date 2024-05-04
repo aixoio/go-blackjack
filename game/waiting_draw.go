@@ -5,9 +5,8 @@ import (
 )
 
 func DrawWaiting(screen *ebiten.Image) {
-	if !DEBUG {
-		DrawFlipedCard(screen, 10, 10)
-	} else {
+	DrawFlipedCard(screen, 10, 10)
+	if DEBUG {
 		DrawCard(screen, 10, 10, DealerHand.Cards()[0])
 	}
 	DrawCard(screen, 50, 10, DealerHand.Cards()[1])
