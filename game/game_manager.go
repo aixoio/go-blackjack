@@ -39,3 +39,23 @@ func DealerPlay() {
 		DealerCount = DealerHand.CountValue()
 	}
 }
+
+func NewHands() {
+
+	if Deck.TotalCards()-4 < 0 {
+		InitBlackjack()
+		return
+	}
+
+	DealerHand = blackjack.NewHand()
+	PlayerHand = blackjack.NewHand()
+
+	DealerHand.AddCard(Deck.PopCard())
+	DealerHand.AddCard(Deck.PopCard())
+
+	PlayerHand.AddCard(Deck.PopCard())
+	PlayerHand.AddCard(Deck.PopCard())
+
+	DealerCount = DealerHand.CountValue()
+	PlayerCount = PlayerHand.CountValue()
+}
