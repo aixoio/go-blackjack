@@ -22,3 +22,8 @@ func InitBlackjack() {
 	PlayerCount = PlayerHand.CountValue()
 
 }
+
+func HitMe() {
+	PlayerHand.AddCard(Deck.PopCard())
+	PlayerCount = PlayerHand.CountValue()
+}
