@@ -12,6 +12,10 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		DrawHome(screen)
 	}
 
+	if CURRENT_STATE == WAITING {
+		DrawWaiting(screen)
+	}
+
 	if DEBUG {
 		DebugDraw(screen)
 	}

@@ -28,16 +28,16 @@ func NewDeck() Deck {
 			}
 
 			switch j {
-			case 9: // this a jack
+			case 10: // this a jack
 				card.Face.extraDat = JACK_DAT
 				card.Face.value = 10
-			case 10: // this a queen
+			case 11: // this a queen
 				card.Face.extraDat = QUEEN_DAT
 				card.Face.value = 10
-			case 11: // this a king
+			case 12: // this a king
 				card.Face.extraDat = KING_DAT
 				card.Face.value = 10
-			case 12: // this a ace
+			case 0: // this a ace
 				card.Face.extraDat = ACE_DAT
 				card.Face.value = 1
 

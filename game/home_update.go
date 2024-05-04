@@ -9,6 +9,7 @@ func UpdateHome() {
 
 	if ebiten.IsMouseButtonPressed(ebiten.MouseButtonLeft) && MouseIsOverHomeButton {
 		CURRENT_STATE = WAITING
+		InitBlackjack()
 	}
 
 }

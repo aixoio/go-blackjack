@@ -7,5 +7,9 @@ func (g *Game) Update() error {
 		UpdateHome()
 	}
 
+	if CURRENT_STATE == WAITING {
+		WaitingUpdate()
+	}
+
 	return nil
 }
