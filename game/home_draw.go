@@ -23,9 +23,9 @@ func DrawHomePlayButton(screen *ebiten.Image) {
 	btnImg.Fill(color.RGBA{R: 51, G: 51, B: 51, A: 255})
 	if MouseIsOverHomeButton {
 		btnImg.Fill(color.RGBA{R: 150, G: 150, B: 150, A: 255})
-		DrawTextWithPoppinsRegularAt("PLAY", color.RGBA{R: 51, G: 51, B: 51, A: 255}, 48, 4, btnImg, 18)
+		DrawTextWithPoppinsRegularAt("Play", color.RGBA{R: 51, G: 51, B: 51, A: 255}, 48, 4, btnImg, 18)
 	} else {
-		DrawTextWithPoppinsRegularAt("PLAY", color.White, 48, 4, btnImg, 18)
+		DrawTextWithPoppinsRegularAt("Play", color.White, 48, 4, btnImg, 18)
 	}
 
 	screen.DrawImage(btnImg, &ebiten.DrawImageOptions{

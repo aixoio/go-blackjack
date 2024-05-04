@@ -36,9 +36,9 @@ func DrawHitButton(screen *ebiten.Image) {
 	btnImg.Fill(color.RGBA{R: 51, G: 51, B: 51, A: 255})
 	if MouseIsOverHitButton {
 		btnImg.Fill(color.RGBA{R: 150, G: 150, B: 150, A: 255})
-		DrawTextWithPoppinsRegularAt("HIT", color.RGBA{R: 51, G: 51, B: 51, A: 255}, 48, 4, btnImg, 18)
+		DrawTextWithPoppinsRegularAt("Hit", color.RGBA{R: 51, G: 51, B: 51, A: 255}, 48, 4, btnImg, 18)
 	} else {
-		DrawTextWithPoppinsRegularAt("HIT", color.White, 48, 4, btnImg, 18)
+		DrawTextWithPoppinsRegularAt("Hit", color.White, 48, 4, btnImg, 18)
 	}
 
 	screen.DrawImage(btnImg, &ebiten.DrawImageOptions{
@@ -56,9 +56,9 @@ func DrawStandButton(screen *ebiten.Image) {
 	btnImg.Fill(color.RGBA{R: 51, G: 51, B: 51, A: 255})
 	if MouseIsOverStandButton {
 		btnImg.Fill(color.RGBA{R: 150, G: 150, B: 150, A: 255})
-		DrawTextWithPoppinsRegularAt("STAND", color.RGBA{R: 51, G: 51, B: 51, A: 255}, 32, 4, btnImg, 18)
+		DrawTextWithPoppinsRegularAt("Stand", color.RGBA{R: 51, G: 51, B: 51, A: 255}, 32, 4, btnImg, 18)
 	} else {
-		DrawTextWithPoppinsRegularAt("STAND", color.White, 32, 4, btnImg, 18)
+		DrawTextWithPoppinsRegularAt("Stand", color.White, 32, 4, btnImg, 18)
 	}
 
 	screen.DrawImage(btnImg, &ebiten.DrawImageOptions{
