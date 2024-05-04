@@ -11,6 +11,7 @@ func (g *Game) Draw(screen *ebiten.Image) {
 	DrawFlipedCard(screen, 10, 10)
 	DrawCard(screen, 50, 10, blackjack.Card{Face: blackjack.NewFaceDat(10, blackjack.JACK_DAT), Suit: blackjack.SUIT_CLUBS}) // 40 px diff
 	DrawCard(screen, 100, 10, blackjack.Card{Face: blackjack.NewFaceDat(10, blackjack.KING_DAT), Suit: blackjack.SUIT_HEART})
+	DrawCard(screen, 100, 10, blackjack.Card{Face: blackjack.NewFaceDat(7, blackjack.NONE_DAT), Suit: blackjack.SUIT_HEART})
 
 	if DEBUG {
 		DebugDraw(screen)
