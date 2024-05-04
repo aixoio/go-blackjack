@@ -9,6 +9,10 @@ type Deck struct {
 	cards []Card
 }
 
+func (d *Deck) TotalCards() int {
+	return len(d.cards)
+}
+
 func (d *Deck) Cards() []Card {
 	return d.cards
 }

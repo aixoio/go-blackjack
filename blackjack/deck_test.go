@@ -26,3 +26,12 @@ func TestDeckPopCard(t *testing.T) {
 	}
 
 }
+
+func TestDeckTotalCards(t *testing.T) {
+	deck := blackjack.NewDeck()
+	deck.Shuffle()
+
+	if deck.TotalCards() != 52 {
+		t.Fail()
+	}
+}
