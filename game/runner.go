@@ -6,7 +6,8 @@ import (
 	"github.com/hajimehoshi/ebiten/v2"
 )
 
-func Start() {
+func Start(debug bool) {
+	DEBUG = debug
 	ebiten.SetWindowSize(WIDTH, HEIGHT)
 	ebiten.SetWindowTitle("Blackjack")
 	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled)
