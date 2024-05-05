@@ -39,7 +39,7 @@ func UpdateBetting() {
 		money.MakeBet(10000)
 	}
 
-	if MouseIsOverBetAllInBtn && inpututil.IsMouseButtonJustReleased(ebiten.MouseButtonLeft) {
+	if MouseIsOverBetAllInBtn && inpututil.IsMouseButtonJustReleased(ebiten.MouseButtonLeft) && money.Balence > 0 {
 		money.MakeBet(money.Balence)
 	}
 
