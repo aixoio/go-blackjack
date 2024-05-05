@@ -13,7 +13,23 @@ func UpdatePlaying() {
 
 	if inpututil.IsMouseButtonJustReleased(ebiten.MouseButtonLeft) && MouseIsOverContinuteButton {
 		NewHands()
+
+		if DealerCount > 21 && PlayerCount > 21 {
+			money.Push()
+		} else if DealerCount > 21 {
+			money.WonBet()
+		} else if PlayerCount > 21 {
+			money.LoseBet()
+		} else if DealerCount == PlayerCount {
+			money.Push()
+		} else if DealerCount > PlayerCount {
+			money.LoseBet()
+		} else if DealerCount < PlayerCount {
+			money.WonBet()
+		}
+
 		money.SaveBalenceToFile(DEBUG)
+
 		CURRENT_STATE = BETTING
 	}
 }
