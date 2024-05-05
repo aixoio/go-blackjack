@@ -12,7 +12,6 @@ func UpdatePlaying() {
 	MouseIsOverContinuteButton = MouseIsOver(400, 588, 192, 32)
 
 	if inpututil.IsMouseButtonJustReleased(ebiten.MouseButtonLeft) && MouseIsOverContinuteButton {
-		NewHands()
 
 		if DealerCount > 21 && PlayerCount > 21 {
 			money.Push()
@@ -30,6 +29,7 @@ func UpdatePlaying() {
 
 		money.SaveBalenceToFile(DEBUG)
 
+		NewHands()
 		CURRENT_STATE = BETTING
 	}
 }
