@@ -1,6 +1,7 @@
 package game
 
 import (
+	"github.com/aixoio/go-blackjack/game/money"
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/hajimehoshi/ebiten/v2/inpututil"
 )
@@ -12,6 +13,7 @@ func UpdatePlaying() {
 
 	if inpututil.IsMouseButtonJustReleased(ebiten.MouseButtonLeft) && MouseIsOverContinuteButton {
 		NewHands()
-		CURRENT_STATE = WAITING
+		money.SaveBalenceToFile(DEBUG)
+		CURRENT_STATE = BETTING
 	}
 }

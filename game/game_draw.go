@@ -20,6 +20,10 @@ func (g *Game) Draw(screen *ebiten.Image) {
 		DrawPlaying(screen)
 	}
 
+	if CURRENT_STATE == BETTING {
+		DrawBetting(screen)
+	}
+
 	if DEBUG {
 		DebugDraw(screen)
 	}

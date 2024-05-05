@@ -15,5 +15,9 @@ func (g *Game) Update() error {
 		UpdatePlaying()
 	}
 
+	if CURRENT_STATE == BETTING {
+		UpdateBetting()
+	}
+
 	return nil
 }
